@@ -1,3 +1,11 @@
+/**
+	Author: Alpe, Jayson D. (Wolf Syntax)
+	Problem Name: HAND SHAKES AGAIN
+	
+	(c) WolfSyntax. Syntax Error v5.2.10
+	
+**/
+
 #include <iostream>
 
 using namespace std;
