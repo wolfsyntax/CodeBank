@@ -4,6 +4,24 @@
 	
 	(c) WolfSyntax. Syntax Error v5.2.10
 	
+	SAMPLE INPUT:
+	
+	6
+	3 1 5 10 1
+	3 1 5 10 3
+	3 1 5 10 5
+	3 1 5 10 16
+	3 1 5 10 15
+	3 1 5 10 17
+	
+	SAMPLE OUTPUT:
+	1
+	3
+	1
+	3
+	2
+	IMPOSSIBLE
+	
 **/
 
 #include <iostream>
