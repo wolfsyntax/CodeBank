@@ -7,6 +7,7 @@
 **/
 
 #include <iostream>
+#include <cmath>
 
 using namespace std;
 
@@ -23,34 +24,40 @@ int main(){
 		
 		int n, sum, s, total = 0, needs = 0; cin >> n;
 		int coins[n];
-
+		int maxv = -1;
 		for(int i = 0; i < n; i++){
 			cin >> coins[i];
+			maxv = max(maxv, coins[i]);
 			total += coins[i];
 		}
 		
 		cin >> sum; s = sum;
-		if(total >= sum)
-			for(int i = 0; i < n; i++){
+		
+		if(total > sum){
+
+			if(sum > maxv){
+				sum -= maxv;
+				needs++;
+			}
+
+			for(int i = n-1, j = 0; i > 0; i--){
 				
-				if(coins[i] == s){
-					needs = 1;
+				if(coins[i] != maxv && coins[i] == sum){
+						needs++;
+						break;
+				}
+				if(s == coins[j] || s == coins[i]) {needs = 1; break;}
+				
+				if(coins[j] > sum && coins[j] - sum != 0){
+					needs += sum;
 					break;
 				}
+				j++;
+			}//end for
+		}else if(total == sum){
+			needs = n;
+		}
 
-				
-				if(sum > coins[i]){
-					needs += coins[i];
-					sum -= coins[i];
-				}
-
-				if(coins[i] >= sum){
-					needs = 0;
-					needs = s;
-					coins[0];
-				}
-
-			}
 		if(needs == 0) cout << "IMPOSSIBLE\n";
 		else{
 			cout << needs << endl;
