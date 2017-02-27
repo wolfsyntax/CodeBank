@@ -15,7 +15,9 @@ int main(){
 	cin >> test;
 	while(test--){
 		int scase = 0, x1, y1; char c;
+		
 		cin >> x >> y >> r;
+		
 		cin >> scase;
 		
 		int healthy = 0, infected = 0;
@@ -23,6 +25,9 @@ int main(){
 		for(int i = 0; i < scase; i++){
 			//cin.ignore();
 			cin >> c >> x1 >> c >> y1 >> c;
+			
+			x1 = abs(x1); y1 = abs(y1);
+			
 //			cout << "X1 " << x1 << " and " << y1 << endl; 
 			int distance = pow((x1-x),2) + pow((y1-y),2);
 
